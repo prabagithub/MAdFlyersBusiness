@@ -25,7 +25,10 @@ var Step2Contoller = function($scope){
 	$scope.color="black"
 }
 
-
+var FooterController = function($scope){
+	$scope.copy="Copyright@2015";
+			
+}
 var LoginController = function($scope){
 	  $scope.message = "MAdFlyers";
 	  $scope.overtopmsg = "Now you can post your AD at any time, any where !!!";

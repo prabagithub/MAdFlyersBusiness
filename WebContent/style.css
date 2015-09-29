@@ -137,3 +137,10 @@ a{
 .hide{
 	dispplay:none;
 }
+
+.footerline {
+    background: #890000 none repeat scroll 0px 0px;
+    height: 10px;
+    width: 100%;
+    margin-bottom:5px;
+}

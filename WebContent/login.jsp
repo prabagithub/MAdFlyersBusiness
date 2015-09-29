@@ -13,7 +13,10 @@ data-require="angular.js@*" data-semver="2.0.0-alpha.31"></script>
 <body ng-controller="LoginController">
 <jsp:include page="overtop.jsp"></jsp:include>
 <form action="LoginServlet" method="post">
+<div style="height:700px" width="100%">
 <jsp:include page="beforeLogin.jsp"></jsp:include>
+</div>
+<jsp:include page="footer.jsp"></jsp:include>
 </form>
 </body>
 </html>
