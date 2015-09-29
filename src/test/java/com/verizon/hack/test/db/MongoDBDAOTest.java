@@ -71,7 +71,7 @@ public class MongoDBDAOTest {
 		
 	}
 	
-	@Test
+	
 	public void testInsertADDDetails() {		
 		MongoDBDAO mongo = new MongoDBDAO();
 		boolean result = mongo.insertADDDetails(ad);
@@ -79,21 +79,21 @@ public class MongoDBDAOTest {
 		
 	}
 
-	@Test
+	
 	public void testCheckUser() {
 		MongoDBDAO mongo = new MongoDBDAO();
 		boolean result = mongo.checkUser(userregistered);
 		assertEquals(true, result);
 	}
 
-	@Test
+	
 	public void testRegisterUser() {
 		MongoDBDAO mongo = new MongoDBDAO();
 		boolean result = mongo.checkUser(userregistered);
 		assertEquals(true, result);
 	}
 	
-	@Test
+	
 	public void testFetchAD() {
 		MongoDBDAO mongo = new MongoDBDAO();
 		mongo.insertADDDetails(ad);		
