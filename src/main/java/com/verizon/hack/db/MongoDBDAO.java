@@ -33,13 +33,13 @@ public class MongoDBDAO {
 	
 	private static void initDBConnection(){
 		try{
-			//MongoClientURI uu = new MongoClientURI("mongodb://CloudFoundry_rt2ng8pk_tin9mr48_85ogqdj9:QJppO4eURNfKMVvd7tudJC_-ot4ufGGE@ds035633.mongolab.com:35633/CloudFoundry_rt2ng8pk_tin9mr48");
+			MongoClientURI uu = new MongoClientURI("mongodb://CloudFoundry_rt2ng8pk_tin9mr48_85ogqdj9:QJppO4eURNfKMVvd7tudJC_-ot4ufGGE@ds035633.mongolab.com:35633/CloudFoundry_rt2ng8pk_tin9mr48");
 		
-			//mongoClient = new MongoClient(uu);
-		mongoClient = new MongoClient("localhost", 27017);
+			mongoClient = new MongoClient(uu);
+		//mongoClient = new MongoClient("localhost", 27017);
 			if(null != mongoClient){
-				//mongoDatabase = mongoClient.getDatabase("CloudFoundry_rt2ng8pk_tin9mr48");	
-				mongoDatabase = mongoClient.getDatabase("ADdb");
+				mongoDatabase = mongoClient.getDatabase("CloudFoundry_rt2ng8pk_tin9mr48");	
+				//mongoDatabase = mongoClient.getDatabase("ADdb");
 			}
 			
 			System.out.println("Connection success");
@@ -77,14 +77,14 @@ public class MongoDBDAO {
 				doc.put("filepath", ad.getFileFullPath());
 				collection.insertOne(doc);
 				result = true;
-				BasicDBObject basic = new BasicDBObject("username",ad.getUsername());
+				/*BasicDBObject basic = new BasicDBObject("username",ad.getUsername());
 				FindIterable<Document> cursor = collection.find(basic);
 				if(null != cursor){
 					curso = cursor.iterator();
 					while(curso.hasNext()){
 						System.out.println(curso.next());
 					}
-				}
+				}*/
 			}
 			} catch(Exception e){
 				result = false;
