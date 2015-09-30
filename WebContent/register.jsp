@@ -14,8 +14,16 @@ data-require="angular.js@*" data-semver="2.0.0-alpha.31"></script>
 <% if(null != request.getSession().getAttribute("username")){
 	request.getSession().removeAttribute("username");}%>
 <jsp:include page="overtop.jsp"></jsp:include>
-<form action="RegisterServlet" method="post" onsubmit="return checkLogin()">
+<%-- <form action="RegisterServlet" method="post" onsubmit="return checkLogin()">
 <jsp:include page="beforeLogin.jsp"></jsp:include>
+</form> --%>
+
+
+
+<div class="newuser" id="newuser" ng-controller="RegisterController">
+<form action=RegisterServlet method="post">
+<jsp:include page="useraccount.jsp"/>
 </form>
+</div>
 </body>
 </html>

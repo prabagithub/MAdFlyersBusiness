@@ -13,17 +13,17 @@
 <div class=""> 
 <div class="succmsg red">Error in posting Ad, Please try again</div>        
 <form>
-<div class="content" style="width:600px;float:left">
+<div class="content" style="width:500px;float:left">
 	<table>
 	<tr>
 	<td>Business Unit Name </td>
-  <td></td>
+  <td class="tdwidth20"></td>
 	  	<td class="verizoncolor"><%= ad.getBusinessName() %></td>
 	</tr>
 	<tr></tr>
 	<tr>
 	<td>Category </td>
-  <td></td>
+  <td class="tdwidth20"></td>
 	  	<td class="verizoncolor"><%= ad.getCategory()%></td>
 	</tr>
 	<tr></tr>
@@ -31,63 +31,63 @@
 	
 	<tr>
 	<td>Address Line1 </td>
-  <td></td>
+  <td class="tdwidth20"></td>
 	  	<td class="verizoncolor"><%= ad.getAddr1() %></td>
 	</tr>
 	<tr></tr>
 	
 		<tr>
 	<td >Address Line2</td>
-  <td></td>
+  <td class="tdwidth20"></td>
 	  	<td class="verizoncolor"><%= ad.getAddr2() %></td>
 	</tr>
 	<tr></tr>
 	
 		<tr>
 	<td>Address Line3</td>
-  <td></td>
+  <td class="tdwidth20"></td>
 	  	<td class="verizoncolor"><%= ad.getAddr3() %></td>
 	</tr>
 	<tr></tr>
 	
 		<tr>
 	<td>City </span></td>
-  <td></td>
+  <td class="tdwidth20"></td>
 	  	<td class="verizoncolor"><%= ad.getCity() %></td>
 	</tr>
 	<tr></tr>
 	
 		<tr>
 	<td>State </td>
-  <td></td>
+  <td class="tdwidth20"></td>
 	  	<td class="verizoncolor"><%= ad.getState() %></td>
 	</tr>
 	<tr></tr>
 	
 	<tr>
 	<td>Country </td>
-  <td></td>
+  <td class="tdwidth20"></td>
 	  	<td class="verizoncolor"><%=ad.getCountry() %></td>
 	</tr>
 	<tr></tr>
 	
 	<tr>
 	<td>Pin code / Zip Code </td>
-  <td></td>
+  <td class="tdwidth20"></td>
 	  	<td class="verizoncolor"><%= ad.getPincode() %></td>
 	</tr>
 	<tr></tr>
 	
 	<tr>
 	<td>Contact No. </td>
-  <td></td>
+  <td class="tdwidth20"></td>
 	  	<td class="verizoncolor"><%=ad.getPhone() %></td>
 	</tr>
 	<tr></tr>
 	
 	<tr>
 	<td>AD Description </td>
-  <td></td>
+  <td class="tdwidth20"></td>
 	  	<td class="verizoncolor"><%=ad.getDesc() %></td>
 	</tr>
 	<tr></tr>			
@@ -95,7 +95,7 @@
 	</table>
 </div>
 <div class="success">
-<img src="images/success.jpeg" style="height:50px;width:50px">
+<img src="images/warn.jpg" style="height:60px;width:60px">
 <a href="home.jsp" class="button red xlarge" style="font-size:25px"><span class="white">Try again</span></a>
 </div>
 </form>
