@@ -42,7 +42,7 @@ var LoginController = function($scope){
 	  $scope.filename="register.jsp";
 	  $scope.welcomeclass="hide";
 	  $scope.forgot="Reset Password"
-	$scope.hdrbg="hdgreen";
+		  $scope.hdrbg="hdgreen";
 	  
 	}
 
