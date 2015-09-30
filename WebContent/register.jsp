@@ -11,8 +11,10 @@ data-require="angular.js@*" data-semver="2.0.0-alpha.31"></script>
 <link href="style.css" rel="stylesheet" />
 </head>
 <body ng-controller="RegisterController">
+<% if(null != request.getSession().getAttribute("username")){
+	request.getSession().removeAttribute("username");}%>
 <jsp:include page="overtop.jsp"></jsp:include>
-<form action="RegisterServlet" method="post">
+<form action="RegisterServlet" method="post" onsubmit="return checkLogin()">
 <jsp:include page="beforeLogin.jsp"></jsp:include>
 </form>
 </body>
