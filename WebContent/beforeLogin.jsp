@@ -14,7 +14,7 @@
 <%} %>
 <tr>
 <td >{{username}}</td>
-<td><input type="text" name="username" id="username"/>
+<td><input type="text" name="username" id="username" placeholder="Username"/>
 </td>
 </tr>
 <tr>
@@ -23,7 +23,7 @@
 <td>
 {{pwd}}
 </td>
-<td><input type="password" id="pwd" name="pwd"/>
+<td><input type="password" id="pwd" name="pwd" placeholder="Password"/>
 </td>
 </tr>
 <tr></tr>
@@ -40,4 +40,3 @@
 </table>
 </div>
 </div>
-</form>

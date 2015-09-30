@@ -14,15 +14,23 @@ if(null != request.getSession().getAttribute("username")){
 }
 ADDetail ad = (ADDetail) request.getSession().getAttribute("ad");%>
 <jsp:include page="overtop.jsp"/>
-<jsp:include page="slideshow.jsp"/>
-<div class="branding container_12">         
+<jsp:include page="logo.jsp"/>
+<div class="">
+<div class="succmsg">Your Ad Successfully posted</div>         
 <form>
-<div class="content">
+<div class="content" style="width:600px;float:left">
 	<table>
 	<tr>
 	<td>Business Unit Name </td>
   <td></td>
 	  	<td class="verizoncolor"><%= ad.getBusinessName() %></td>
+	</tr>
+	<tr></tr>
+	
+	<tr>
+	<td>Category </td>
+  <td></td>
+	  	<td class="verizoncolor"><%= ad.getCategory()%></td>
 	</tr>
 	<tr></tr>
 	
@@ -76,6 +84,13 @@ ADDetail ad = (ADDetail) request.getSession().getAttribute("ad");%>
 	<tr></tr>
 	
 	<tr>
+	<td>Contact No. </td>
+  <td></td>
+	  	<td class="verizoncolor"><%=ad.getPhone() %></td>
+	</tr>
+	<tr></tr>
+	
+	<tr>
 	<td>AD Description </td>
   <td></td>
 	  	<td class="verizoncolor"><%=ad.getDesc() %></td>
@@ -83,25 +98,20 @@ ADDetail ad = (ADDetail) request.getSession().getAttribute("ad");%>
 	<tr></tr>			
 
 <tr></tr>
-	
-	<tr>
-	<td>Attachment </td>
-  <td></td>
-  <%if(null != ad.getFileFullPath()){%>
-  <td class="verizoncolor"><img src="images/image.jpg" style="height:20px;width:20px;" alt="NO Image"/></td>
-  <% }else{%>
-   <td class="verizoncolor">-No Attachment-</td>
-  <%} %>	  	
-	</tr>
-	<tr></tr>			
+				
 		
 	</table>
+</div>
+
+<div class="success">
+<img src="images/success.jpeg" style="height:50px;width:50px">
+<a href="home.jsp" class="button red xlarge" style="font-size:25px"><span class="white">Home</span></a>
 </div>
 
 </form>
 </div>
 <div class="top">
-<a href="home.jsp" class="button red xlarge"><span class="white">Back</span></a>
+
 </div>
    
 </body>

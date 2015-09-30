@@ -10,16 +10,20 @@ data-require="angular.js@*" data-semver="2.0.0-alpha.31"></script>
 <script src="script.js"></script>
 <link href="style.css" rel="stylesheet" />
 </head>
-<body ng-controller="LoginController">
+<body>
 <% if(null != request.getSession().getAttribute("username")){
 	request.getSession().removeAttribute("username");}%>
 <jsp:include page="overtop.jsp"></jsp:include>
-<<<<<<< HEAD
+<div class="exiuser" id = "existuser" ng-controller="LoginController">
 <form action="LoginServlet" method="post">
-<jsp:include page="beforeLogin.jsp"></jsp:include>
-<form action="LoginServlet" method="post" onsubmit="return checkLogin()">
-<jsp:include page="beforeLogin.jsp"/>
->>>>>>> refs/remotes/origin/master
+<jsp:include page="useraccount.jsp"/>
 </form>
+</div>
+
+<div class="newuser" id="newuser" ng-controller="RegisterController">
+<form action=RegisterServlet method="post">
+<jsp:include page="useraccount.jsp"/>
+</form>
+</div>
 </body>
 </html>

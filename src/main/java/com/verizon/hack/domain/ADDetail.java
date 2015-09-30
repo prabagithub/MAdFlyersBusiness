@@ -14,6 +14,8 @@ public class ADDetail {
 	private String desc;
 	private String username;
 	private String fileFullPath;
+	private String phone;
+	private String category;
 	/**
 	 * @return the businessName
 	 */
@@ -145,6 +147,30 @@ public class ADDetail {
 	 */
 	public void setFileFullPath(String fileFullPath) {
 		this.fileFullPath = fileFullPath;
+	}
+	/**
+	 * @return the phone
+	 */
+	public String getPhone() {
+		return phone;
+	}
+	/**
+	 * @param phone the phone to set
+	 */
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	/**
+	 * @return the category
+	 */
+	public String getCategory() {
+		return category;
+	}
+	/**
+	 * @param category the category to set
+	 */
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	
 	

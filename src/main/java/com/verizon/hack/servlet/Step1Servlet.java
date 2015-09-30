@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.verizon.hack.db.MongoDBDAO;
 import com.verizon.hack.domain.ADDetail;
 
 /**
@@ -37,7 +38,9 @@ public class Step1Servlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String viewName = null;
+		boolean result = false;
 		RequestDispatcher rd = null;
+		MongoDBDAO mongoDAO = new MongoDBDAO();
 		try{
 				ADDetail ad = new ADDetail();
 				ad.setBusinessName(request.getParameter("orgName"));
@@ -50,8 +53,16 @@ public class Step1Servlet extends HttpServlet {
 				ad.setPincode(request.getParameter("zip"));
 				ad.setDesc(request.getParameter("desc"));
 				ad.setUsername(request.getParameter("username"));
-				request.getSession().setAttribute("ad", ad);								
-				viewName="/step2.jsp";				
+				ad.setPhone(request.getParameter("phone"));
+				ad.setCategory(request.getParameter("category"));
+				request.getSession().setAttribute("ad", ad);
+				result =  mongoDAO.insertADDDetails(ad);
+				if(result){
+					viewName = "/success.jsp";
+				}else{
+					viewName = "/error.jsp";
+				}
+				//viewName="/step2.jsp";				
 			}
 			catch(Exception e){
 				viewName = "/error.jsp";

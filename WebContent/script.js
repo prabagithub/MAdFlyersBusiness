@@ -2,20 +2,20 @@
 
 var MainController = function($scope){
   $scope.message = "MAdFlyers";
-  $scope.overtopmsg = "Now you can post your AD at any time, any where !!!";
-  $scope.color="black"
+  $scope.overtopmsg = "Go green !!! No more pamplets !!! Now you can post your Ad at any time, any where !!!";
+  $scope.color="darkgreen"
 }
 var SuccessController = function($scope){	
 	
 	$scope.message = "MAdFlyers";
-	$scope.overtopmsg = "Your AD successfully posted";
+	$scope.overtopmsg = "";
 	$scope.color="green"
 }
 
 var ErrorController = function($scope){	
 	
 	$scope.message = "MAdFlyers";
-	$scope.overtopmsg = "Error in posting AD, Please try again";
+	$scope.overtopmsg = "Error in posting Ad, Please try again";
 	$scope.color="red"
 }
 
@@ -31,29 +31,31 @@ var FooterController = function($scope){
 }
 var LoginController = function($scope){
 	  $scope.message = "MAdFlyers";
-	  $scope.overtopmsg = "Now you can post your AD at any time, any where !!!";
+	  $scope.overtopmsg = "Now you can post your Ad at any time, any where !!!";
 	  $scope.color="black";
-	  $scope.header="LOGIN";
+	  $scope.header="Existing User";
 	  $scope.errmsg="Please provide valid login details";
 	  $scope.username="User name";
 	  $scope.pwd="Password";
 	  $scope.btnvalue="Login";
-	  $scope.regmsg="Don't have an account,  create now, it is simple";
+	  $scope.regmsg="Already have an account, Please login ";
 	  $scope.filename="register.jsp";
 	  $scope.welcomeclass="hide";
+	  $scope.forgot="Reset Password"
 	  
 	}
 
 var RegisterController = function($scope){
 	  $scope.message = "MAdFlyers";
-	  $scope.overtopmsg = "Now you can post your AD at any time, any where !!!";
+	  $scope.overtopmsg = "Now you can post your Ad at any time, any where !!!";
 	  $scope.color="black";
-	  $scope.header="Create an Account";
+	  $scope.header="New User";
 	  $scope.errmsg="Sorry! Username already exists, Please try with new one";
 	  $scope.username="User name";
 	  $scope.pwd="Password";
+	  $scope.confirm="Confirm Password";
 	  $scope.btnvalue="Register";
-	  $scope.regmsg="Already have an account, click here to login";
+	  $scope.regmsg="Don't have an account?,  create one, it is simple";
 	  $scope.filename="login.jsp"
 	  $scope.welcomeclass="hide";
 	  
