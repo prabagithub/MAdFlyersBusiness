@@ -99,8 +99,7 @@ function isEmpty(arg1){
 function checkLogin(){
 	
 	var username = document.getElementById("loginusername").value;
-	var pwd = document.getElementById("loginpwd").value;
-	alert(username);
+	var pwd = document.getElementById("loginpwd").value;	
 	if(!isEmpty(username)){
 		alert("Please provide Username");
 		return false;
