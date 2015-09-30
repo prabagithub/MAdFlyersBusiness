@@ -43,6 +43,9 @@ var LoginController = function($scope){
 	  $scope.welcomeclass="hide";
 	  $scope.forgot="Reset Password"
 		  $scope.hdrbg="hdgreen";
+	  $scope.input350="";
+	  $scope.usernameid="loginusername";
+		  $scope.pwdid="loginpwd";
 	  
 	}
 
@@ -53,13 +56,16 @@ var RegisterController = function($scope){
 	  $scope.header="New User";
 	  $scope.errmsg="Sorry! Username already exists, Please try with new one";
 	  $scope.username="User name";
-	  $scope.pwd="Password";
-	  $scope.confirm="Confirm Password";
+	  $scope.pwd="New Password";
+	  $scope.repwd="Re-enter Password";
 	  $scope.btnvalue="Register";
 	  $scope.regmsg="Don't have an account?,  create one, it is simple";
 	  $scope.filename="login.jsp"
 	  $scope.welcomeclass="hide";
 	  $scope.hdrbg="hdrred";
+	  $scope.input350="input300px";
+	  $scope.usernameid="regusername";
+		  $scope.pwdid="regpwd";
 	}
 
 function check(){
@@ -71,9 +77,10 @@ function check(){
 	var country = document.getElementById("country").value;
 	var pincode = document.getElementById("zip").value;
 	var desc = document.getElementById("desc").value;
-	
+	var category = document.getElementById("category").value;
+	var phone = document.getElementById("phone").value;
 	if(isEmpty(orgName) && isEmpty(addr1) && isEmpty(city) && isEmpty(state)
-			&& isEmpty(country) && isEmpty(pincode) && isEmpty(desc)){
+			&& isEmpty(country) && isEmpty(pincode) && isEmpty(desc) && isEmpty(category) && isEmpty(phone)){
 		return true;
 	}	
 	alert("Please provide all the mandatory information")
@@ -91,9 +98,9 @@ function isEmpty(arg1){
 
 function checkLogin(){
 	
-	var username = document.getElementById("username").value;
-	var pwd = document.getElementById("pwd").value;
-	
+	var username = document.getElementById("loginusername").value;
+	var pwd = document.getElementById("loginpwd").value;
+	alert(username);
 	if(!isEmpty(username)){
 		alert("Please provide Username");
 		return false;
@@ -106,3 +113,25 @@ function checkLogin(){
 	}
 	
 	
+
+function checkRegister(){
+	
+	var username = document.getElementById("regusername").value;
+	var pwd = document.getElementById("regpwd").value;
+	var cpwd = document.getElementById("cpwd").value;
+	var fname = document.getElementById("fname").value;
+	var lname = document.getElementById("lname").value;
+	
+	if(isEmpty(username) && isEmpty(pwd) && isEmpty(cpwd) && isEmpty(fname) && isEmpty(lname)){
+		if(pwd != cpwd){
+			alert("Password not match");
+			return false;
+		}
+		return true;
+		}
+	else{
+		alert("Please provide all the information");
+		return false;
+	}
+	return false;
+}

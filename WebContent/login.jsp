@@ -11,23 +11,37 @@ data-require="angular.js@*" data-semver="2.0.0-alpha.31"></script>
 <link href="style.css" rel="stylesheet" />
 </head>
 <body>
-<% if(null != request.getSession().getAttribute("username")){
-	request.getSession().removeAttribute("username");}%>
+<% String errid = null; 
+String loginerrid = "";
+String regerrid = "";
+if(null != request.getSession().getAttribute("username")){
+	request.getSession().removeAttribute("username");}
+	if(null != request.getAttribute("error")){
+	errid= (String) request.getAttribute("error");
+	if(null != errid && "login".equalsIgnoreCase(errid)){
+		loginerrid = "show";
+	}else if(null != errid && "reg".equalsIgnoreCase(errid)){
+		regerrid = "show";
+	}
+	}	
+	%>
 <jsp:include page="overtop.jsp"></jsp:include>
 
 <div class="newuser" id="newuser" ng-controller="RegisterController">
-<form action=RegisterServlet method="post">
+<form action=RegisterServlet method="post" onsubmit="return checkRegister()">
 <jsp:include page="useraccount.jsp">
 <jsp:param value="reg" name="reg"/>
+<jsp:param value="<%=regerrid %>" name="errid"/>
 </jsp:include>
 </form>
 </div>
 
 
 <div class="exiuser" id = "existuser" ng-controller="LoginController">
-<form action="LoginServlet" method="post">
+<form action="LoginServlet" method="post" onsubmit="return checkLogin()">
 <jsp:include page="useraccount.jsp">
 <jsp:param value="login" name="reg"/>
+<jsp:param value="<%=loginerrid %>" name="errid"/>
 </jsp:include>
 </form>
 </div>

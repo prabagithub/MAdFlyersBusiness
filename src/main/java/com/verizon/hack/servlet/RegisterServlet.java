@@ -47,16 +47,18 @@ public class RegisterServlet extends HttpServlet {
 			String userName = request.getParameter("username");
 			user.setUserName(userName);
 			user.setPassword(request.getParameter("pwd"));
+			user.setFname(request.getParameter("fname"));
+			user.setLname(request.getParameter("lname"));
 			isReg = mongo.checkUser(user);
 			if(isReg){
-				request.setAttribute("error", true);
-				viewName = "/register.jsp";
+				request.setAttribute("error", "reg");
+				viewName = "/login.jsp";
 			}else{
 				result = mongo.registerUser(user);
-				viewName = "/register.jsp";
+				viewName = "/login.jsp";
 				if(result){
 					viewName = "/home.jsp";
-					request.getSession().setAttribute("username", userName);
+					request.getSession().setAttribute("username", user.getFname());
 				}				
 			}						
 						

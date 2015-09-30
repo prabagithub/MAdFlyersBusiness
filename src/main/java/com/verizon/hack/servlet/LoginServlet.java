@@ -39,6 +39,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String viewName = null;
+		String fname = null;
 		boolean result = false;
 		User user = new User();
 		RequestDispatcher rd = null;		
@@ -50,10 +51,11 @@ public class LoginServlet extends HttpServlet {
 			result = mongo.checkUser(user);
 			if(result){
 				viewName = "/home.jsp";
-				request.getSession().setAttribute("username", userName);
+				fname = mongo.fetchFirstName(userName, user.getPassword());
+				request.getSession().setAttribute("username", fname);
 			}else{
 				viewName = "/login.jsp";
-				request.setAttribute("error", true);
+				request.setAttribute("error", "login");
 			}
 			
 		}catch(Exception e){

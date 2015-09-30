@@ -27,7 +27,7 @@ h1 {
 
 .content{
 	margin-left:200px;
-	margin-top:100px;
+	margin-top:100px;	
 }
 
 .button.red {
@@ -226,4 +226,8 @@ margin-left: 10px;
 
 .tdwidth20{
 	width:20px;
+}
+
+.input300px{
+	width:308px;	
 }

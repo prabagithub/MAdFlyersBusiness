@@ -18,7 +18,7 @@ ADDetail ad = (ADDetail) request.getSession().getAttribute("ad");%>
 <div class="">
 <div class="succmsg green">Your Ad Successfully posted</div>         
 <form>
-<div class="content" style="width:500px;float:left">
+<div class="content" style="width:500px;float:left;margin-top:20px">
 	<table>
 	<tr>
 	<td>Business Unit Name </td>

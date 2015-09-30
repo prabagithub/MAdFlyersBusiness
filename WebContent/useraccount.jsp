@@ -1,4 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="uid" value="{{usernameid}}"/>
+<c:set var="pid" value="{{pwdid}}"/>
 <table class="logintable">
 <tr>
 <td colspan="2">
@@ -6,44 +8,28 @@
 
 </td>
 </tr>
-<% if(null != request.getAttribute("error") && (boolean) request.getAttribute("error")){
-%>
+<c:if test="${param.errid eq 'show'}">
 <tr>
 <td colspan="2"><span class="red">{{errmsg}}</span></td>
 </tr>
-<%} %>
+</c:if>
 <c:if test="${param.reg eq 'reg'}">
 <tr class="tr50">
-<td>
- First Name
+ <td><input type="text" autofocus="autofocus" class="form-control" placeholder="First Name" id="fname" name="fname"/> 
  </td>
- <td><input type="text" autofocus="autofocus" class="form-control" placeholder="First Name"/> 
- </td>
- </tr>
- <tr>
- </tr>
- <tr class="tr50">
- <td>Last Name</td>
- <td><input type="text" autofocus="autofocus" class="form-control" placeholder="Last Name"/>
+ 
+ <td><input type="text" autofocus="autofocus" class="form-control" placeholder="Last Name" id="lname" name="lname"/>
  </tr>
  </c:if>
 
 <tr class="tr50">
-<c:if test="${param.reg eq 'reg'}">
- <td >{{username}}</td>
- </c:if>
-<td><input type="text" autofocus="autofocus" class="form-control" name="username" id="username" placeholder="Username"/>
+<td colspan="2"><input type="text" autofocus="autofocus" class="form-control {{input350}}" name="username" id="${uid}" placeholder="Username"/>
 </td>
 </tr>
 <tr>
 </tr>
 <tr class="tr50">
-<c:if test="${param.reg eq 'reg'}">
-<td>
-{{pwd}}
-</td>
-</c:if>
-<td><input type="password" autofocus="autofocus" class="form-control" id="pwd" name="pwd" placeholder="Password"/>
+<td colspan="2"><input type="password" autofocus="autofocus" class="form-control {{input350}}" id="${pid}" name="pwd" placeholder="{{pwd}}"/>
 </td>
 </tr>
 <tr></tr>
@@ -51,10 +37,7 @@
 
 <c:if test="${param.reg eq 'reg'}">
 <tr class="tr50">
-<td>
-{{confirm}}
-</td>
-<td><input type="password" autofocus="autofocus" class="form-control" id="cpwd" name="cpwd" placeholder="Password"/>
+<td colspan="2"><input type="password" autofocus="autofocus" class="form-control {{input350}}" id="cpwd" name="cpwd" placeholder="{{repwd}}"/>
 </td>
 </tr>
 <tr>
@@ -77,7 +60,7 @@
 <div class="saml-login"></div>
 <table>
 <tr>
-<td colspan="2"><a href="{{}}">{{regmsg}}</a></td>
+<td colspan="2"><a href="">{{regmsg}}</a></td>
 </tr>
 <tr>
 <td><a href="">{{forgot}}</a></td>

@@ -133,6 +133,8 @@ public class MongoDBDAO {
 				Document doc = new Document();
 				doc.put("userName", user.getUserName());
 				doc.put("pwd", user.getPassword());					
+				doc.put("fname", user.getFname());
+				doc.put("lname", user.getLname());
 				collection.insertOne(doc);
 			}			
 						
@@ -178,4 +180,32 @@ public class MongoDBDAO {
 	}
 	
 	
+	public String fetchFirstName(String userName, String password){
+		
+		String fname = null;
+		boolean result = false;
+		MongoCursor<Document> cur = null;
+		try{		
+		if(null != userName){
+			MongoCollection<Document> collection = mongoDatabase.getCollection("userslist");
+			BasicDBObject basic   = new BasicDBObject ("userName", userName);
+			FindIterable<Document> cursor = collection.find(basic);
+			if(null != cursor){
+				cur = cursor.iterator();
+				while(cur.hasNext()){
+					Document doc = cur.next();
+					String pwd = (String) doc.get("pwd");
+					if(null != pwd && pwd.equalsIgnoreCase(password)){
+						fname = null != doc.get("fname")?(String)doc.getString("fname"):null;
+						break;
+					}
+				}
+			}
+		}
+		
+	}catch(Exception e){
+		throw e;
+	}
+		return fname;
+	}
 }

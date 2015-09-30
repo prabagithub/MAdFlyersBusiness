@@ -13,7 +13,7 @@
 <div class=""> 
 <div class="succmsg red">Error in posting Ad, Please try again</div>        
 <form>
-<div class="content" style="width:500px;float:left">
+<div class="content" style="width:500px;float:left;margin-top:20px">
 	<table>
 	<tr>
 	<td>Business Unit Name </td>
