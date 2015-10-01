@@ -62,7 +62,7 @@ public class MongoDBDAO {
 		try{
 			if(null != ad && null != ad.getUsername() && null != ad.getBusinessName()
 					&& null != ad.getPincode()){
-				MongoCollection<Document> collection = mongoDatabase.getCollection("ADlist");
+				MongoCollection<Document> collection = mongoDatabase.getCollection("ADlist");				
 				Document doc = new Document();
 				doc.put("business", ad.getBusinessName());
 				doc.put("addressL1", ad.getAddr1());
@@ -75,6 +75,8 @@ public class MongoDBDAO {
 				doc.put("desc", ad.getDesc());	
 				doc.put("username", ad.getUsername());
 				doc.put("filepath", ad.getFileFullPath());
+				doc.put("phone", ad.getPhone());
+				doc.put("category", ad.getCategory());
 				collection.insertOne(doc);
 				result = true;
 				/*BasicDBObject basic = new BasicDBObject("username",ad.getUsername());
@@ -169,6 +171,8 @@ public class MongoDBDAO {
 					job.add("country",  null !=doc.get("country")? (String)doc.get("country") : "");
 					job.add("pincode",  null !=doc.get("pincode")? (String)doc.get("pincode") : "");
 					job.add("desc",  null !=doc.get("desc")? (String)doc.get("desc") : "");				
+					job.add("phone",  null !=doc.get("phone")? (String)doc.get("phone") : "");
+					job.add("category",  null !=doc.get("category")? (String)doc.get("category") : "");
 					JsonObject jo = job.build();
 					jab.add(jo);
 				}

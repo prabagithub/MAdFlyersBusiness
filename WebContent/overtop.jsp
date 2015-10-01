@@ -15,5 +15,4 @@ if(null != request.getSession().getAttribute("username")){
                 <tr><td align="right"><a href="login.jsp" >Logout</a></td></tr>
                 </table>   
                 <%} %>           
-                <div class="redribbon"></div>                                
-                <div class="overtop {{color}}">{{overtopmsg}}</div> 
+                <div class="redribbon"></div>                                                

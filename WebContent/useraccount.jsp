@@ -49,19 +49,14 @@
 </c:if>
 
 <tr class="tr50">
-<c:if test="${param.reg eq 'reg'}">
-<td>
-</td>
-</c:if>
 <td>
 <input type="submit" class="button red xlarge" style="color:white;" value="{{btnvalue}}"/></td>
 </tr>
 </table>
+<c:if test="${param.reg eq 'login'}">
 <div class="saml-login"></div>
+</c:if>
 <table>
-<tr>
-<td colspan="2"><a href="">{{regmsg}}</a></td>
-</tr>
 <tr>
 <td><a href="">{{forgot}}</a></td>
 </tr>
